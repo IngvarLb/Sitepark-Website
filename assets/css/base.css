@@ -40,7 +40,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
-ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+/* :where() hält die Spezifität bei 0 – Komponenten dürfen Abstände immer überschreiben */
+:where(ul, ol)[role="list"] { list-style: none; padding: 0; }
 img, svg, video, picture { display: block; max-width: 100%; }
 img { height: auto; }
 button, input, select, textarea { font: inherit; color: inherit; letter-spacing: inherit; }
