@@ -1,0 +1,736 @@
+---
+title: Styleguide – Sitepark Design System 2.0
+description: Designsystem und Styleguide des Sitepark-Webauftritts: Farben, Typografie, Abstände, Tiefe, Bewegung, Icons und Komponenten.
+canonical: https://www.sitepark.com/styleguide/
+robots: noindex, nofollow
+home: index.html
+homeurl: index.html
+---
+<!doctype html>
+<html lang="de">
+<head>
+{{> head}}
+<link rel="stylesheet" href="assets/css/styleguide.css">
+</head>
+<body class="sg" id="top">
+{{> sprite}}
+<a class="skip-link" href="#main">Inhalt anspringen</a>
+
+<header class="sg-bar">
+  <div class="sg-bar__inner container-wide" style="--container-wide: 90rem">
+    <a class="sg-bar__brand" href="index.html" aria-label="Zur Sitepark-Website">
+      <svg viewBox="0 0 123 38.75" aria-hidden="true"><use href="#logo"/></svg>
+    </a>
+    <span class="sg-bar__title">Design System 2.0</span>
+    <span class="sg-bar__spacer"></span>
+    <div class="segmented" role="group" aria-label="Darstellung" data-theme-control>
+      <span class="segmented__thumb" aria-hidden="true"></span>
+      <button class="segmented__option" type="button" data-theme-option="system" aria-pressed="true">Auto</button>
+      <button class="segmented__option" type="button" data-theme-option="light" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg><span class="segmented__label">Hell</span></button>
+      <button class="segmented__option" type="button" data-theme-option="dark" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg><span class="segmented__label">Dunkel</span></button>
+    </div>
+    <a class="link-chevron sg-bar__site" href="index.html"><span class="link-chevron__label">Website</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a>
+  </div>
+</header>
+
+<div class="sg-layout">
+  <nav class="sg-nav" aria-label="Kapitel" data-scrollspy>
+    <p class="toc__title">Kapitel</p>
+    <ol class="toc__list" role="list">
+      <li><a class="toc__link" href="#einfuehrung">Einführung</a></li>
+      <li><a class="toc__link" href="#prinzipien">Prinzipien</a></li>
+      <li><a class="toc__link" href="#marke">Marke</a></li>
+      <li><a class="toc__link" href="#farbe">Farbe</a></li>
+      <li><a class="toc__link" href="#typografie">Typografie</a></li>
+      <li><a class="toc__link" href="#layout">Abstände &amp; Layout</a></li>
+      <li><a class="toc__link" href="#tiefe">Form &amp; Tiefe</a></li>
+      <li><a class="toc__link" href="#bewegung">Bewegung</a></li>
+      <li><a class="toc__link" href="#icons">Icons</a></li>
+      <li><a class="toc__link" href="#komponenten">Komponenten</a></li>
+      <li><a class="toc__link" href="#barrierefreiheit">Barrierefreiheit</a></li>
+      <li><a class="toc__link" href="#umsetzung">Umsetzung</a></li>
+    </ol>
+  </nav>
+
+  <main class="sg-main" id="main">
+
+    <!-- ============================================================ Einführung -->
+    <section class="sg-hero" id="einfuehrung">
+      <p class="eyebrow hero__title-line" style="--i:0">Sitepark Design System 2.0</p>
+      <h1 class="t-display rule hero__title-line" style="--i:1">Styleguide</h1>
+      <p class="t-lead hero__lead" style="--i:2">Das visuelle Fundament des neuen Sitepark-Auftritts. Bewährte Markenwerte – Gelb, Anthrazit, Source Sans, der diagonale Bildanschnitt – übersetzt in ein präzises System nach den Prinzipien der Apple Human Interface Guidelines: klare Typografie, ein 8-Punkt-Raster, Materialien mit Tiefe und Bewegung mit Federphysik.</p>
+      <div class="sg-hero__meta hero__actions" style="--i:3">
+        <span class="sg-badge sg-badge--accent">Version 2.0</span>
+        <span class="sg-badge">Stand: November 2026</span>
+        <span class="sg-badge">Light &amp; Dark Mode</span>
+        <span class="sg-badge">Ziel: WCAG 2.2 AA</span>
+      </div>
+
+      <h2 class="sg-h3" style="margin-block-start: var(--space-11)">Vorher &amp; Nachher</h2>
+      <p class="sg-desc">Gleicher Inhalt, gleiche Marke, neues Niveau. Regler ziehen, um den bisherigen mit dem neuen Auftritt zu vergleichen (Startseite, 1440 × 900 px).</p>
+      <div class="sg-compare">
+        <img src="assets/img/styleguide/vorher.jpg" width="1440" height="900" alt="Bisherige Startseite von sitepark.com">
+        <img class="sg-compare__after" src="assets/img/styleguide/nachher.jpg" width="1440" height="900" alt="Neue Startseite nach dem Redesign">
+        <span class="sg-compare__label sg-compare__label--before">Vorher</span>
+        <span class="sg-compare__label sg-compare__label--after">Nachher</span>
+        <span class="sg-compare__handle" aria-hidden="true"></span>
+        <input type="range" min="0" max="100" value="50" aria-label="Vergleichsregler Vorher/Nachher">
+      </div>
+    </section>
+
+    <!-- ============================================================ Prinzipien -->
+    <section class="sg-section" id="prinzipien">
+      <div class="sg-section__header">
+        <p class="eyebrow">01</p>
+        <h2 class="t-title-1">Prinzipien</h2>
+        <p class="t-lead">Vier Leitsätze entscheiden jede Gestaltungsfrage – von der Wahl eines Abstands bis zur Dauer einer Animation.</p>
+      </div>
+      <div class="sg-grid" style="--min: 22rem">
+        <article class="sg-principle"><span class="sg-principle__num">1</span><h3>Klarheit</h3><p>Inhalt vor Dekoration. Großzügiger Weißraum, eine klare typografische Hierarchie und eine Botschaft pro Abschnitt machen jede Seite in Sekunden erfassbar.</p></article>
+        <article class="sg-principle"><span class="sg-principle__num">2</span><h3>Zurückhaltung</h3><p>Die Oberfläche tritt hinter den Inhalt zurück. Sitepark-Gelb ist Akzent und Bühne – nie Rauschen. Linien, Schatten und Farbe werden sparsam und bewusst gesetzt.</p></article>
+        <article class="sg-principle"><span class="sg-principle__num">3</span><h3>Tiefe</h3><p>Glasmaterialien, weiche Schatten und Ebenen schaffen Orientierung. Bewegung folgt physikalischen Federn und erklärt Zusammenhänge, statt zu dekorieren.</p></article>
+        <article class="sg-principle"><span class="sg-principle__num">4</span><h3>Wiedererkennbarkeit</h3><p>Das Redesign entwickelt den bestehenden Auftritt weiter: Farben, Schrift, der gelbe Akzentbalken und der diagonale Bildanschnitt bleiben – nur präziser umgesetzt.</p></article>
+      </div>
+
+      <h3 class="sg-h3">Was sich verändert hat</h3>
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Bereich</th><th>Bisher</th><th>Neu</th></tr></thead>
+          <tbody>
+            <tr><td>Typografie</td><td>Source Sans Pro, statische Schnitte, Versal-Headline</td><td>Source Sans 3 Variable (200–900), fluide Skala mit optischem Tracking, Satzschreibung</td></tr>
+            <tr><td>Farbe</td><td>Fünf Einzelwerte</td><td>Token-System in drei Ebenen, Light &amp; Dark Mode, geprüfte Kontraste</td></tr>
+            <tr><td>Layout</td><td>50/50-Kachelraster</td><td>Erzählfluss in voller Breite, 8-pt-Raster, Breakpoints 734 / 1068 / 1440</td></tr>
+            <tr><td>Navigation</td><td>Hamburger-Menü auf allen Geräten</td><td>Sichtbare Navigation mit gleitendem Scroll-Spy-Indikator und Glas-Material; Vollbild-Menü mobil</td></tr>
+            <tr><td>Bewegung</td><td>Einfache Fades</td><td>Federphysik nach SwiftUI-Modell, gestaffelte Reveals, scrollgetriebene Effekte, „Bewegung reduzieren“</td></tr>
+            <tr><td>Kennzahlen</td><td>Kreise mit Zählern</td><td>Aktivitätsringe mit Verlauf und Glow, tabellarische Ziffern</td></tr>
+            <tr><td>Form</td><td>Eckige Kästen</td><td>Kantig mit minimaler Rundung (1–4 px), Tiefe über Schatten und Glas</td></tr>
+            <tr><td>Partner</td><td>Logo-Liste</td><td>Klickbare Karten mit Logo-Kacheln</td></tr>
+            <tr><td>Barrierefreiheit</td><td>Skip-Link</td><td>Zusätzlich Fokusführung, inertes Menü, 44-pt-Touchziele, erhöhter Kontrast, Dark Mode</td></tr>
+            <tr><td>Technik</td><td>Astro + Svelte</td><td>Statisches HTML/CSS/JS ohne Framework, Partials-Build, Cross-Document View Transitions</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================ Marke -->
+    <section class="sg-section" id="marke">
+      <div class="sg-section__header">
+        <p class="eyebrow">02</p>
+        <h2 class="t-title-1">Marke</h2>
+        <p class="t-lead">Das Logo bleibt unverändert. Neu ist seine technische Form: Die dunklen Buchstaben folgen <code class="sg-token">currentColor</code> und passen sich hellen wie dunklen Flächen an – das „i“ bleibt immer Logo-Gelb.</p>
+      </div>
+
+      <h3 class="sg-h3">Logo auf Flächen</h3>
+      <div class="sg-grid">
+        <div><div class="sg-logo-tile sg-do surface"><svg viewBox="0 0 123 38.75" role="img" aria-label="Logo auf Weiß"><use href="#logo"/></svg></div><p class="sg-caption">Auf Weiß – Standard</p></div>
+        <div><div class="sg-logo-tile sg-do surface surface-inverse"><svg viewBox="0 0 123 38.75" role="img" aria-label="Logo auf Anthrazit"><use href="#logo"/></svg></div><p class="sg-caption">Auf Anthrazit – Schrift in Weiß</p></div>
+        <div><div class="sg-logo-tile sg-do surface"><span class="sg-logo-clear"><svg viewBox="0 0 123 38.75" role="img" aria-label="Logo mit Schutzzone"><use href="#logo"/></svg></span></div><p class="sg-caption">Schutzzone: rundum ½ Logohöhe · Mindesthöhe digital 24 px</p></div>
+      </div>
+
+      <h3 class="sg-h3">Bitte nicht</h3>
+      <div class="sg-grid">
+        <div><div class="sg-logo-tile sg-dont surface surface-accent"><svg viewBox="0 0 123 38.75" role="img" aria-label="Falsch: Logo auf Gelb"><use href="#logo"/></svg></div><p class="sg-caption">Nicht auf Gelb – das „i“ verschwindet</p></div>
+        <div><div class="sg-logo-tile sg-dont surface"><svg viewBox="0 0 123 38.75" role="img" aria-label="Falsch: verzerrtes Logo" style="transform: scaleX(1.4)"><use href="#logo"/></svg></div><p class="sg-caption">Nicht verzerren oder neu proportionieren</p></div>
+        <div><div class="sg-logo-tile sg-dont surface"><svg viewBox="0 0 123 38.75" role="img" aria-label="Falsch: Logo mit Effekten" style="transform: rotate(-8deg); filter: drop-shadow(4px 6px 4px rgb(0 0 0 / .4))"><use href="#logo"/></svg></div><p class="sg-caption">Keine Schatten, Drehungen oder Effekte</p></div>
+      </div>
+
+      <h3 class="sg-h3">Markenmotive</h3>
+      <p class="sg-desc">Zwei Elemente aus dem bisherigen Auftritt tragen die Wiedererkennung: der gelbe Akzentbalken unter Überschriften und der diagonale Bildanschnitt im Hero.</p>
+      <div class="sg-grid sg-grid--2">
+        <div class="sg-canvas sg-canvas--stack">
+          <h4 class="t-title-1 rule">Überschrift</h4>
+          <p class="t-footnote t-secondary">Balken: Breite <code class="sg-token">clamp(40px, 1.15em, 72px)</code>, Höhe ≈ 0,085 em, rechteckig (1 px Rundung). Zeichnet sich beim Einblenden mit <code class="sg-token">--spring-smooth</code> von links.</p>
+        </div>
+        <div class="sg-canvas sg-canvas--stack">
+          <div style="position:relative;aspect-ratio:16/8;border-radius:var(--radius-lg);overflow:hidden;background:var(--sp-yellow-500)">
+            <img src="assets/img/hero-1280.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;clip-path:polygon(61% 0,100% 0,100% 100%,39% 100%)">
+          </div>
+          <p class="t-footnote t-secondary">Diagonale: <code class="sg-token">polygon(61% 0, 100% 0, 100% 100%, 39% 100%)</code> ab 1069 px; mobil als ansteigende Oberkante. Öffnet sich beim Laden als Wischbewegung.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Farbe -->
+    <section class="sg-section" id="farbe">
+      <div class="sg-section__header">
+        <p class="eyebrow">03</p>
+        <h2 class="t-title-1">Farbe</h2>
+        <p class="t-lead">Drei Ebenen: <strong>Primitive</strong> halten die Markenwerte, <strong>Semantik-Tokens</strong> geben ihnen Bedeutung und passen sich Theme und Fläche an, <strong>Komponenten</strong> nutzen ausschließlich Semantik. Alle Werte auf dieser Seite werden live aus dem CSS gelesen.</p>
+      </div>
+
+      <h3 class="sg-h3">Markenfarben</h3>
+      <div class="sg-grid" style="--min: 12rem">
+        <div class="sg-swatch sg-swatch--hero" data-swatch="--sp-yellow-500"><div class="sg-swatch__color" style="background:var(--sp-yellow-500)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Sitepark Gelb</div><code class="sg-token">--sp-yellow-500</code> <span data-hex></span><div data-badges style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap"></div></div></div>
+        <div class="sg-swatch sg-swatch--hero" data-swatch="--sp-gray-800"><div class="sg-swatch__color" style="background:var(--sp-gray-800)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Sitepark Anthrazit</div><code class="sg-token">--sp-gray-800</code> <span data-hex></span><div data-badges style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap"></div></div></div>
+        <div class="sg-swatch sg-swatch--hero" data-swatch="--sp-yellow-600"><div class="sg-swatch__color" style="background:var(--sp-yellow-600)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Logo-Gelb</div><code class="sg-token">--sp-yellow-600</code> <span data-hex></span><div data-badges style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap"></div></div></div>
+        <div class="sg-swatch sg-swatch--hero" data-swatch="--sp-ink"><div class="sg-swatch__color" style="background:var(--sp-ink)"></div><div class="sg-swatch__meta"><div class="sg-swatch__name">Logo-Tinte</div><code class="sg-token">--sp-ink</code> <span data-hex></span><div data-badges style="margin-top:8px;display:flex;gap:4px;flex-wrap:wrap"></div></div></div>
+      </div>
+
+      <h3 class="sg-h3">Skalen</h3>
+      <p class="sg-desc">Werte unter dem Hex-Code: Kontrast gegenüber Weiß. Gelb ist eine Flächen- und Akzentfarbe – als Text auf Weiß erreicht es nur 1,7 : 1. Für gelbe Akzent-Texte gilt <code class="sg-token">--sp-yellow-800</code>.</p>
+      <div class="sg-scale" data-scale="sp-yellow-50, sp-yellow-100, sp-yellow-200, sp-yellow-300, sp-yellow-400, sp-yellow-500, sp-yellow-600, sp-yellow-700, sp-yellow-800, sp-yellow-900"></div>
+      <div class="sg-scale" style="margin-top: var(--space-4)" data-scale="sp-gray-0, sp-gray-50, sp-gray-100, sp-gray-200, sp-gray-300, sp-gray-400, sp-gray-500, sp-gray-600, sp-gray-700, sp-gray-800, sp-gray-900, sp-gray-950, sp-gray-1000"></div>
+
+      <h3 class="sg-h3">Semantische Tokens</h3>
+      <p class="sg-desc">Jeder Token hat einen Wert für Hell und Dunkel (<code class="sg-token">light-dark()</code>). Komponenten referenzieren nur diese Namen.</p>
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Token</th><th>Hell</th><th>Dunkel</th><th>Verwendung</th></tr></thead>
+          <tbody>
+            <tr data-semantic="--color-bg"><td><code class="sg-token">--color-bg</code></td><td data-light></td><td data-dark></td><td>Seitenhintergrund</td></tr>
+            <tr data-semantic="--color-bg-secondary"><td><code class="sg-token">--color-bg-secondary</code></td><td data-light></td><td data-dark></td><td>Abschnitte im Wechsel, Bühnen</td></tr>
+            <tr data-semantic="--color-bg-tertiary"><td><code class="sg-token">--color-bg-tertiary</code></td><td data-light></td><td data-dark></td><td>Hover auf sekundären Flächen, Platzhalter</td></tr>
+            <tr data-semantic="--color-bg-elevated"><td><code class="sg-token">--color-bg-elevated</code></td><td data-light></td><td data-dark></td><td>Karten auf getönten Flächen</td></tr>
+            <tr data-semantic="--color-text"><td><code class="sg-token">--color-text</code></td><td data-light></td><td data-dark></td><td>Überschriften, Fließtext</td></tr>
+            <tr data-semantic="--color-text-secondary"><td><code class="sg-token">--color-text-secondary</code></td><td data-light></td><td data-dark></td><td>Leads, Beschreibungen (AA)</td></tr>
+            <tr data-semantic="--color-text-tertiary"><td><code class="sg-token">--color-text-tertiary</code></td><td data-light></td><td data-dark></td><td>Metadaten, nur große/kurze Texte</td></tr>
+            <tr data-semantic="--color-separator"><td><code class="sg-token">--color-separator</code></td><td data-light></td><td data-dark></td><td>Haarlinien, Rahmen</td></tr>
+            <tr data-semantic="--color-fill"><td><code class="sg-token">--color-fill</code></td><td data-light></td><td data-dark></td><td>Getönte Buttons, Chips</td></tr>
+            <tr data-semantic="--color-accent"><td><code class="sg-token">--color-accent</code></td><td data-light></td><td data-dark></td><td>Primäre Aktionen, Ringe, Akzentbalken</td></tr>
+            <tr data-semantic="--color-accent-text"><td><code class="sg-token">--color-accent-text</code></td><td data-light></td><td data-dark></td><td>Eyebrows, Rollen, Chevrons</td></tr>
+            <tr data-semantic="--color-on-accent"><td><code class="sg-token">--color-on-accent</code></td><td data-light></td><td data-dark></td><td>Text auf Gelb</td></tr>
+            <tr data-semantic="--color-focus"><td><code class="sg-token">--color-focus</code></td><td data-light></td><td data-dark></td><td>Fokusring</td></tr>
+            <tr data-semantic="--color-success"><td><code class="sg-token">--color-success</code></td><td data-light></td><td data-dark></td><td>Systemfarbe: Erfolg</td></tr>
+            <tr data-semantic="--color-critical"><td><code class="sg-token">--color-critical</code></td><td data-light></td><td data-dark></td><td>Systemfarbe: Fehler, Warnung</td></tr>
+            <tr data-semantic="--color-info"><td><code class="sg-token">--color-info</code></td><td data-light></td><td data-dark></td><td>Systemfarbe: Hinweis</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sg-h3">Flächen</h3>
+      <p class="sg-desc">Eine Fläche definiert die Semantik-Tokens neu. Alles, was darin liegt, sieht automatisch richtig aus – Buttons auf Gelb werden dunkel, Akzent-Texte auf Anthrazit gelb.</p>
+      <div class="sg-grid sg-grid--2">
+        <div class="sg-surface surface"><p class="eyebrow">.surface</p><h4>Standard</h4><p>Weiß bzw. Tiefschwarz im Dunkelmodus.</p><div class="cluster"><a class="button" href="#farbe">Aktion</a><a class="link-chevron" href="#farbe"><span class="link-chevron__label">Mehr</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div></div>
+        <div class="sg-surface surface surface-secondary"><p class="eyebrow">.surface-secondary</p><h4>Sekundär</h4><p>Für den Rhythmus zwischen Abschnitten.</p><div class="cluster"><a class="button" href="#farbe">Aktion</a><a class="link-chevron" href="#farbe"><span class="link-chevron__label">Mehr</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div></div>
+        <div class="sg-surface surface surface-accent"><p class="eyebrow">.surface-accent</p><h4>Akzent</h4><p>Hero und Produkt-Kachel. Sparsam einsetzen.</p><div class="cluster"><a class="button" href="#farbe">Aktion</a><a class="link-chevron" href="#farbe"><span class="link-chevron__label">Mehr</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div></div>
+        <div class="sg-surface surface surface-inverse"><p class="eyebrow">.surface-inverse</p><h4>Invers</h4><p>Kennzahlen, Footer, Open-Source-Kachel.</p><div class="cluster"><a class="button" href="#farbe">Aktion</a><a class="link-chevron" href="#farbe"><span class="link-chevron__label">Mehr</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div></div>
+      </div>
+
+      <h3 class="sg-h3">Kontrastregel für Gelb</h3>
+      <div class="sg-grid">
+        <div><div class="sg-logo-tile sg-dont surface" style="font-size:var(--text-title-2);font-weight:700;color:var(--sp-yellow-500)" role="img" aria-label="Negativbeispiel: gelber Text auf Weiß"><span aria-hidden="true">Gelber Text</span></div><p class="sg-caption">Gelb auf Weiß · 1,7 : 1 – nicht lesbar</p></div>
+        <div><div class="sg-logo-tile sg-do surface" style="font-size:var(--text-title-2);font-weight:700;color:var(--sp-yellow-800)">Akzent-Text</div><p class="sg-caption"><code class="sg-token">--sp-yellow-800</code> auf Weiß · 5,4 : 1 (AA)</p></div>
+        <div><div class="sg-logo-tile sg-do surface surface-accent" style="font-size:var(--text-title-2);font-weight:700">Text auf Gelb</div><p class="sg-caption">Tinte auf Gelb · 9,7 : 1 (AAA)</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Typografie -->
+    <section class="sg-section" id="typografie">
+      <div class="sg-section__header">
+        <p class="eyebrow">04</p>
+        <h2 class="t-title-1">Typografie</h2>
+        <p class="t-lead">Source Sans 3 – der direkte Nachfolger der bisherigen Source Sans Pro – als variable Schrift. Ein Font-File für alle Stärken, selbst gehostet und ohne Anfragen an Dritte.</p>
+      </div>
+
+      <div class="sg-specimen" data-weight-target>
+        <div class="sg-specimen__glyph" aria-hidden="true">Aa</div>
+        <div>
+          <p class="sg-specimen__chars" aria-hidden="true">ABCDEFGHIJKLMNOPQRSTUVWXYZ ÄÖÜ<br>abcdefghijklmnopqrstuvwxyz äöüß<br>0123456789 € & @ („ “) – … ✓</p>
+          <label style="display:grid;gap:var(--space-2);margin-top:var(--space-6)">
+            <span class="t-footnote t-secondary">Strichstärke: <span class="sg-specimen__value" data-weight-value>600</span></span>
+            <input class="sg-slider" type="range" min="200" max="900" step="1" value="600" data-weight-slider>
+          </label>
+        </div>
+      </div>
+      <div class="sg-weights" style="margin-top: var(--space-7)">
+        <span style="font-weight:300">Light<small>300 · selten</small></span>
+        <span style="font-weight:400">Regular<small>400 · Fließtext</small></span>
+        <span style="font-weight:500">Medium<small>500 · Navigation</small></span>
+        <span style="font-weight:600">Semibold<small>600 · Titel, Buttons</small></span>
+        <span style="font-weight:700">Bold<small>700 · Display</small></span>
+        <span style="font-weight:800">Heavy<small>800 · Wasserzeichen</small></span>
+      </div>
+
+      <h3 class="sg-h3">Typo-Skala</h3>
+      <p class="sg-desc">Alle Stufen skalieren fluide zwischen 375 px und 1440 px Viewport. Das Tracking wird mit zunehmender Größe enger – wie bei SF Pro. Die Zeile „Jetzt“ zeigt die berechneten Werte bei aktueller Fensterbreite.</p>
+      <div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Display XL</b><code class="sg-token">.t-display-xl</code><br>48 → 104 px · 1.02 · −0.032 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-display-xl" data-type-sample>Stadt von morgen</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Display</b><code class="sg-token">.t-display</code><br>40 → 80 px · 1.05 · −0.028 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-display" data-type-sample>Lösungen für die Stadt</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Title 1</b><code class="sg-token">.t-title-1</code><br>34 → 56 px · 1.08 · −0.022 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-title-1" data-type-sample>Kommunale Internet-Auftritte</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Statement</b><code class="sg-token">.t-statement</code><br>28 → 48 px · 1.18 · −0.018 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-statement" data-type-sample>Sitepark entwickelt kommunale Internet-Auftritte seit 1997.</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Title 2</b><code class="sg-token">.t-title-2</code><br>28 → 40 px · 1.12 · −0.016 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-title-2" data-type-sample>Beratung und Konzeption</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Title 3</b><code class="sg-token">.t-title-3</code><br>22 → 28 px · 1.2 · −0.01 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-title-3" data-type-sample>Thorsten Liebold</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Lead</b><code class="sg-token">.t-lead</code><br>21 → 28 px · 1.4 · −0.008 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-lead" data-type-sample>Wir engagieren uns für Ihre Projekte und begleiten und beraten Sie bis zur professionellen Lösung.</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Headline</b><code class="sg-token">.t-headline</code><br>19 → 21 px · 1.32 · Semibold<br><span data-type-live></span></div><p class="sg-type-row__sample t-headline" data-type-sample>Tutorials und Dokumentation</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Body</b><code class="sg-token">.t-body</code><br>17 → 19 px · 1.56<br><span data-type-live></span></div><p class="sg-type-row__sample t-body" data-type-sample>In enger Abstimmung mit kommunalen Kunden entwickelt und optimiert für große Redaktions-Teams und Websites mit vielen 1.000 Seiten.</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Callout</b><code class="sg-token">.t-callout</code><br>16 → 17 px · 1.5<br><span data-type-live></span></div><p class="sg-type-row__sample t-callout" data-type-sample>Fachinformatiker und seit 2008 bei Sitepark.</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Eyebrow</b><code class="sg-token">.eyebrow</code><br>15 → 17 px · Semibold · Akzent<br><span data-type-live></span></div><p class="sg-type-row__sample eyebrow" data-type-sample style="margin:0">Vernetzt, sicher und innovativ</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Footnote</b><code class="sg-token">.t-footnote</code><br>14 → 15 px · 1.45<br><span data-type-live></span></div><p class="sg-type-row__sample t-footnote" data-type-sample>Amtsgericht Münster HRB 5017 · USt-Id. DE 200998038</p></div>
+        <div class="sg-type-row"><div class="sg-type-row__meta"><b>Caption</b><code class="sg-token">.t-caption</code><br>12 → 13 px · +0.008 em<br><span data-type-live></span></div><p class="sg-type-row__sample t-caption" data-type-sample>© Sitepark GmbH</p></div>
+      </div>
+
+      <h3 class="sg-h3">Satzregeln</h3>
+      <div class="sg-grid sg-grid--wide">
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Satzschreibung statt Versalien</h3><p>Überschriften in normaler Groß-/Kleinschreibung – ruhiger, schneller lesbar.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Optisches Tracking</h3><p>Große Größen eng (bis −0.032 em), kleine leicht offen (+0.008 em).</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Lesemaß</h3><p>Fließtext 60–75 Zeichen pro Zeile (<code class="sg-token">--container-text</code>).</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Ausgewogene Umbrüche</h3><p><code class="sg-token">text-wrap: balance</code> für Titel, <code class="sg-token">pretty</code> gegen Hurenkinder.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Deutsche Silbentrennung</h3><p><code class="sg-token">hyphens: auto</code> mit <code class="sg-token">lang="de"</code>; weiche Trennstriche (&amp;shy;) in langen Komposita.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Tabellarische Ziffern</h3><p>Kennzahlen mit <code class="sg-token">tabular-nums</code> – kein Springen beim Hochzählen.</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Abstände & Layout -->
+    <section class="sg-section" id="layout">
+      <div class="sg-section__header">
+        <p class="eyebrow">05</p>
+        <h2 class="t-title-1">Abstände &amp; Layout</h2>
+        <p class="t-lead">Ein 8-Punkt-Raster mit 4-Punkt-Halbschritten. Große Abstände wachsen fluide mit dem Viewport – Weißraum ist ein gestalterisches Mittel, kein Rest.</p>
+      </div>
+
+      <h3 class="sg-h3">Abstandsskala</h3>
+      <div>
+        <div class="sg-space"><code class="sg-token">--space-1</code><span class="sg-space__px">4</span><span class="sg-space__bar" style="width:var(--space-1)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-2</code><span class="sg-space__px">8</span><span class="sg-space__bar" style="width:var(--space-2)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-3</code><span class="sg-space__px">12</span><span class="sg-space__bar" style="width:var(--space-3)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-4</code><span class="sg-space__px">16</span><span class="sg-space__bar" style="width:var(--space-4)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-5</code><span class="sg-space__px">20</span><span class="sg-space__bar" style="width:var(--space-5)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-6</code><span class="sg-space__px">24</span><span class="sg-space__bar" style="width:var(--space-6)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-7</code><span class="sg-space__px">32</span><span class="sg-space__bar" style="width:var(--space-7)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-8</code><span class="sg-space__px">40</span><span class="sg-space__bar" style="width:var(--space-8)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-9</code><span class="sg-space__px">48</span><span class="sg-space__bar" style="width:var(--space-9)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-10</code><span class="sg-space__px">64</span><span class="sg-space__bar" style="width:var(--space-10)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-11</code><span class="sg-space__px">80</span><span class="sg-space__bar" style="width:var(--space-11)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-12</code><span class="sg-space__px">96</span><span class="sg-space__bar" style="width:var(--space-12)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-13</code><span class="sg-space__px">128</span><span class="sg-space__bar" style="width:var(--space-13)"></span></div>
+        <div class="sg-space"><code class="sg-token">--space-14</code><span class="sg-space__px">160</span><span class="sg-space__bar" style="width:var(--space-14)"></span></div>
+      </div>
+
+      <h3 class="sg-h3">Fluide Abstände &amp; Container</h3>
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Token</th><th>375 px</th><th>1440 px</th><th>Einsatz</th></tr></thead>
+          <tbody>
+            <tr><td><code class="sg-token">--section-pad</code></td><td>80</td><td>168</td><td>Vertikaler Abstand eines Abschnitts</td></tr>
+            <tr><td><code class="sg-token">--gutter</code></td><td>20</td><td>48</td><td>Seitenränder</td></tr>
+            <tr><td><code class="sg-token">--grid-gap</code></td><td>16</td><td>28</td><td>Abstand zwischen Karten und Spalten</td></tr>
+            <tr><td><code class="sg-token">--stack-lg</code></td><td>40</td><td>72</td><td>Abstand Kopf → Inhalt eines Abschnitts</td></tr>
+            <tr><td><code class="sg-token">--container-text</code></td><td colspan="2">704 px</td><td>Lesetexte, Rechtstexte</td></tr>
+            <tr><td><code class="sg-token">--container</code></td><td colspan="2">1080 px</td><td>Standard-Inhaltsbreite</td></tr>
+            <tr><td><code class="sg-token">--container-wide</code></td><td colspan="2">1320 px</td><td>Kachel-Raster, Hero, Footer</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sg-h3">Breakpoints</h3>
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Bereich</th><th>Breite</th><th>Verhalten</th></tr></thead>
+          <tbody>
+            <tr><td>Kompakt</td><td>bis 734 px</td><td>Eine Spalte, Team als wischbare Galerie, Bild über Text</td></tr>
+            <tr><td>Regulär</td><td>735 – 1068 px</td><td>Zwei Spalten, Kontakt-Button in der Leiste, Vollbild-Menü</td></tr>
+            <tr><td>Breit</td><td>ab 1069 px</td><td>Navigation sichtbar, diagonaler Hero, vier Spalten</td></tr>
+            <tr><td>Groß</td><td>ab 1441 px</td><td>Container gedeckelt, Typografie auf Maximalwerten</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sg-h3">Raster</h3>
+      <p class="sg-desc">Zwölf Spalten ab 735 px, vier Spalten darunter; Spaltenabstand <code class="sg-token">--grid-gap</code>.</p>
+      <div class="sg-grid-demo" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+    </section>
+
+    <!-- ============================================================ Form & Tiefe -->
+    <section class="sg-section" id="tiefe">
+      <div class="sg-section__header">
+        <p class="eyebrow">06</p>
+        <h2 class="t-title-1">Form &amp; Tiefe</h2>
+        <p class="t-lead">Kantig mit minimaler Rundung: Ecken werden nur um 1 bis 4 px gebrochen – präzise, sachlich, nah am bisherigen Auftritt. Tiefe entsteht über mehrschichtige, sehr leichte Schatten und Materialien, nicht über runde Formen.</p>
+      </div>
+
+      <h3 class="sg-h3">Radien</h3>
+      <div class="sg-grid" style="--min: 7.5rem">
+        <div><div class="sg-radius" style="border-radius:var(--radius-xs)">1 px</div><p class="sg-caption"><code class="sg-token">--radius-xs</code><br>Akzentbalken, Punkte</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-sm)">2 px</div><p class="sg-caption"><code class="sg-token">--radius-sm</code><br>Tokens, Marker</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-md)">2 px</div><p class="sg-caption"><code class="sg-token">--radius-md</code><br>Code, Tabellen</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-lg)">3 px</div><p class="sg-caption"><code class="sg-token">--radius-lg</code><br>Karten, Glas</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-xl)">3 px</div><p class="sg-caption"><code class="sg-token">--radius-xl</code><br>Porträts, Partner</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-2xl)">4 px</div><p class="sg-caption"><code class="sg-token">--radius-2xl</code><br>Kacheln, Panels</p></div>
+        <div><div class="sg-radius" style="border-radius:var(--radius-control);aspect-ratio:2/1">2 px</div><p class="sg-caption"><code class="sg-token">--radius-control</code><br>Buttons, Chips, Toast</p></div>
+      </div>
+
+      <h3 class="sg-h3">Schatten</h3>
+      <div class="sg-canvas">
+        <div class="sg-grid" style="width:100%">
+          <div class="sg-shadow" style="box-shadow:var(--shadow-1)">--shadow-1<br><span class="t-caption t-secondary">Karten in Ruhe</span></div>
+          <div class="sg-shadow" style="box-shadow:var(--shadow-2)">--shadow-2<br><span class="t-caption t-secondary">Hover, Partnerkarten</span></div>
+          <div class="sg-shadow" style="box-shadow:var(--shadow-3)">--shadow-3<br><span class="t-caption t-secondary">Glas, Toast, Kachel-Hover</span></div>
+        </div>
+      </div>
+
+      <h3 class="sg-h3">Materialien</h3>
+      <p class="sg-desc">Durchscheinende Flächen mit Hintergrund-Unschärfe und Sättigung (<code class="sg-token">--material-blur</code>). Die Glaskarte erhält zusätzlich eine Lichtkante – angelehnt an Liquid Glass.</p>
+      <div class="sg-materials">
+        <div class="sg-material" style="background:var(--material-thin)">Dünn<small>--material-thin</small></div>
+        <div class="sg-material" style="background:var(--material-regular)">Regulär<small>--material-regular · Navigation</small></div>
+        <div class="sg-material" style="background:var(--material-thick)">Dick<small>--material-thick · Menü, Toast</small></div>
+        <div class="sg-material glass" style="border-radius:var(--radius-lg)">Glaskarte<small>.glass · Beratung</small></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Bewegung -->
+    <section class="sg-section" id="bewegung">
+      <div class="sg-section__header">
+        <p class="eyebrow">07</p>
+        <h2 class="t-title-1">Bewegung</h2>
+        <p class="t-lead">Bewegung folgt Federn statt starrer Kurven – berechnet nach dem SwiftUI-Modell (Response, Bounce) und als CSS <code class="sg-token">linear()</code> hinterlegt. Bei „Bewegung reduzieren“ werden alle Federn zu kurzen Überblendungen.</p>
+      </div>
+
+      <div class="sg-grid sg-grid--wide">
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Mit Bedeutung</h3><p>Jede Animation erklärt Herkunft, Zustand oder Hierarchie.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Physikalisch</h3><p>Federn reagieren natürlich und laufen ohne harten Stopp aus.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Ruhig</h3><p>Kurze Wege (≤ 32 px), weiches Einblenden, maximal leichter Überschwinger.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Abschaltbar</h3><p><code class="sg-token">prefers-reduced-motion</code> wird überall respektiert.</p></div>
+      </div>
+
+      <h3 class="sg-h3">Federn &amp; Kurven</h3>
+      <p class="sg-desc">Kurven werden live aus den Tokens gezeichnet. „Abspielen“ bewegt den Punkt mit genau dieser Kurve.</p>
+      <div class="sg-grid sg-grid--wide">
+        <div class="sg-curve" data-curve="--spring-smooth" data-duration="--spring-smooth-duration"><div class="sg-curve__head"><span class="sg-curve__name">Smooth</span><span class="sg-badge">Feder · 720 ms</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Response 0,5 · Bounce 0 – Reveals, Karten-Hover</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+        <div class="sg-curve" data-curve="--spring-snappy" data-duration="--spring-snappy-duration"><div class="sg-curve__head"><span class="sg-curve__name">Snappy</span><span class="sg-badge">Feder · 550 ms</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Response 0,4 · Bounce 0,15 – Buttons, Indikator, Menü</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+        <div class="sg-curve" data-curve="--spring-bouncy" data-duration="--spring-bouncy-duration"><div class="sg-curve__head"><span class="sg-curve__name">Bouncy</span><span class="sg-badge">Feder · 800 ms</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Response 0,5 · Bounce 0,3 – Icons, Toast (sparsam)</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+        <div class="sg-curve" data-curve="--ease-standard" data-duration="--duration-slow"><div class="sg-curve__head"><span class="sg-curve__name">Standard</span><span class="sg-badge">Kurve</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Farb- und Deckkraft-Wechsel</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+        <div class="sg-curve" data-curve="--ease-out" data-duration="--duration-reveal"><div class="sg-curve__head"><span class="sg-curve__name">Out</span><span class="sg-badge">Kurve</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Einblenden, Hero-Wischbewegung, Ringe</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+        <div class="sg-curve" data-curve="--ease-in-out" data-duration="--duration-slow"><div class="sg-curve__head"><span class="sg-curve__name">In-Out</span><span class="sg-badge">Kurve</span></div><svg aria-hidden="true"></svg><div class="sg-track"><span class="sg-track__dot"></span></div><div class="cluster" style="justify-content:space-between"><span class="t-caption t-secondary">Ortswechsel zwischen zwei Ruhezuständen</span><button class="button button--sm button--secondary" type="button" data-play><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Abspielen</button></div></div>
+      </div>
+
+      <h3 class="sg-h3">Dauern</h3>
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Token</th><th>Wert</th><th>Einsatz</th></tr></thead>
+          <tbody>
+            <tr><td><code class="sg-token">--duration-instant</code></td><td>100 ms</td><td>Gedrückt-Zustand</td></tr>
+            <tr><td><code class="sg-token">--duration-fast</code></td><td>200 ms</td><td>Farbwechsel bei Hover</td></tr>
+            <tr><td><code class="sg-token">--duration-base</code></td><td>320 ms</td><td>Menü, Toast, Material</td></tr>
+            <tr><td><code class="sg-token">--duration-slow</code></td><td>600 ms</td><td>Bilder einblenden</td></tr>
+            <tr><td><code class="sg-token">--duration-reveal</code></td><td>1000 ms</td><td>Einblenden beim Scrollen</td></tr>
+            <tr><td><code class="sg-token">--stagger</code></td><td>90 ms</td><td>Versatz innerhalb einer Gruppe</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="sg-h3">Muster</h3>
+      <div class="sg-grid sg-grid--2">
+        <div class="sg-motion-demo">
+          <div class="sg-motion-demo__stage" id="demo-reveal" style="display:flex;gap:12px">
+            <span data-reveal="scale" class="chip">Einblenden</span><span data-reveal="scale" class="chip">gestaffelt</span><span data-reveal="scale" class="chip">mit Feder</span>
+          </div>
+          <div><p class="t-footnote t-secondary" style="margin-bottom:12px">Reveal: 32 px nach oben, 90 ms Versatz</p><button class="button button--sm button--secondary" type="button" data-replay="demo-reveal"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Wiederholen</button></div>
+        </div>
+        <div class="sg-motion-demo">
+          <div class="sg-motion-demo__stage" id="demo-blur"><p class="t-title-1" data-reveal="blur">Unschärfe weicht</p></div>
+          <div><p class="t-footnote t-secondary" style="margin-bottom:12px">Blur-in: für Überschriften im Hero</p><button class="button button--sm button--secondary" type="button" data-replay="demo-blur"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Wiederholen</button></div>
+        </div>
+        <div class="sg-motion-demo surface surface-inverse" style="background:var(--color-bg)">
+          <div class="sg-motion-demo__stage" id="demo-ring">
+            <div class="stat" style="--i:0">
+              <div class="stat__ring" style="width:7rem;margin-bottom:12px">
+                <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring__track" cx="60" cy="60" r="52"/><circle class="ring__fill" cx="60" cy="60" r="52" pathLength="100"/></svg>
+                <svg class="stat__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#f-coffee"/></svg>
+              </div>
+              <p class="stat__value" style="font-size:var(--text-title-2)"><span class="stat__number" data-count-to="120" style="--digits:3">120</span></p>
+            </div>
+          </div>
+          <div><p class="t-footnote t-secondary" style="margin-bottom:12px">Ring schließt sich, Zahl zählt mit</p><button class="button button--sm button--secondary" type="button" data-replay="demo-ring"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Wiederholen</button></div>
+        </div>
+        <div class="sg-motion-demo">
+          <div class="sg-motion-demo__stage"><button class="button button--lg" type="button" data-demo-toast>Drücken &amp; halten</button></div>
+          <p class="t-footnote t-secondary">Taktil: Buttons skalieren beim Drücken auf 96,5 %. Loslassen zeigt den Toast mit Bouncy-Feder.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Icons -->
+    <section class="sg-section" id="icons">
+      <div class="sg-section__header">
+        <p class="eyebrow">08</p>
+        <h2 class="t-title-1">Icons</h2>
+        <p class="t-lead">Linien-Icons im Stil der SF Symbols: 24er-Raster, Kontur 1,75, runde Enden und Ecken. Sie stehen als SVG-Sprite bereit und übernehmen die Textfarbe.</p>
+      </div>
+      <div class="cluster" style="--cluster-gap: var(--space-8); align-items:flex-start">
+        <div class="sg-icon-anatomy" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></div>
+        <div class="sg-desc" style="flex:1 1 16rem;max-width:28rem;margin:0">
+          <p><strong>Raster</strong> 24 × 24, Sicherheitsabstand 2 px</p>
+          <p><strong>Kontur</strong> 1,75 (UI) · 3 auf 64er-Raster (Kennzahlen)</p>
+          <p><strong>Enden</strong> rund · <strong>Farbe</strong> <code class="sg-token">currentColor</code></p>
+          <p><strong>Größe</strong> 1,25 em neben Text, 28 px in Themen-Kacheln</p>
+          <p style="margin-top:var(--space-4)">Einbinden: <code class="sg-token sg-token--wrap">&lt;svg class="icon"&gt;&lt;use href="#i-phone"/&gt;&lt;/svg&gt;</code></p>
+        </div>
+      </div>
+      <h3 class="sg-h3">Oberfläche</h3>
+      <div class="sg-grid" style="--min: 7.5rem">
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>chevron-right</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>arrow-up-right</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>arrow-up</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>phone</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg>envelope</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg>link</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg>share</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>check</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>play</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg>sun</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>moon</div>
+      </div>
+      <h3 class="sg-h3">Themen</h3>
+      <div class="sg-grid" style="--min: 7.5rem">
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg>building</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-chart"/></svg>chart</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-arrows"/></svg>arrows</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>shield</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>lock</div>
+        <div class="sg-icon"><svg class="icon" aria-hidden="true"><use href="#i-accessibility"/></svg>accessibility</div>
+      </div>
+      <h3 class="sg-h3">Marken &amp; Kennzahlen</h3>
+      <div class="sg-grid" style="--min: 7.5rem">
+        <div class="sg-icon"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-facebook"/></svg>facebook</div>
+        <div class="sg-icon"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-github"/></svg>github</div>
+        <div class="sg-icon"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-linkedin"/></svg>linkedin</div>
+        <div class="sg-icon sg-icon--fact"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#f-city"/></svg>f-city</div>
+        <div class="sg-icon sg-icon--fact"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#f-network"/></svg>f-network</div>
+        <div class="sg-icon sg-icon--fact"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#f-pencil"/></svg>f-pencil</div>
+        <div class="sg-icon sg-icon--fact"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#f-coffee"/></svg>f-coffee</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Komponenten -->
+    <section class="sg-section" id="komponenten">
+      <div class="sg-section__header">
+        <p class="eyebrow">09</p>
+        <h2 class="t-title-1">Komponenten</h2>
+        <p class="t-lead">Alle Bausteine der Website als lebende Beispiele. Der HTML-Code unter jedem Beispiel wird direkt aus der Vorschau erzeugt und ist damit immer aktuell.</p>
+      </div>
+
+      <h3 class="sg-h3">Buttons</h3>
+      <p class="sg-desc">Rechteckig mit 2 px Rundung (<code class="sg-token">--radius-control</code>), mindestens 44 pt Trefferfläche. Pro Bereich höchstens ein primärer Button. Kleine Buttons erweitern ihre Trefferfläche unsichtbar.</p>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas">
+        <a class="button button--lg" href="#komponenten">Beratung anfragen</a>
+        <a class="button" href="#komponenten">Primär</a>
+        <a class="button button--secondary" href="#komponenten">Sekundär</a>
+        <a class="button button--outline" href="#komponenten">Kontur</a>
+        <a class="button button--sm" href="#komponenten">Klein</a>
+        <a class="button button--secondary" href="tel:+49-251-4826550"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Mit Icon</a>
+      </div></div>
+      <div class="sg-grid sg-grid--2">
+        <div class="sg-example"><div class="sg-example__preview sg-canvas surface-accent">
+          <a class="button" href="#komponenten">Auf Gelb</a>
+          <a class="button button--secondary" href="#komponenten">Sekundär</a>
+        </div></div>
+        <div class="sg-example"><div class="sg-example__preview sg-canvas surface-inverse">
+          <a class="button" href="#komponenten">Auf Anthrazit</a>
+          <a class="button button--secondary" href="#komponenten">Sekundär</a>
+        </div></div>
+      </div>
+
+      <h3 class="sg-h3">Links</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas">
+        <a class="link-chevron" href="#komponenten">
+          <span class="link-chevron__label">Unsere Software</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+        </a>
+        <a class="link-chevron link-chevron--external" href="https://docs.sitepark.com">
+          <span class="link-chevron__label">Tutorials</span>
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+        </a>
+      </div></div>
+
+      <h3 class="sg-h3">Abschnittskopf</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas sg-canvas--stack">
+        <div class="section-header" style="margin:0">
+          <p class="eyebrow">Vernetzt, sicher und innovativ</p>
+          <h2 class="t-title-1 rule">Kommunale Internet-Auftritte</h2>
+          <p class="t-lead">Nur auf Fragen, die nicht gestellt werden, gibt es garantiert keine Antwort!</p>
+        </div>
+      </div></div>
+
+      <h3 class="sg-h3">Segmented Control</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas">
+        <div class="segmented" role="group" aria-label="Ansicht" data-segmented-demo>
+          <span class="segmented__thumb" aria-hidden="true"></span>
+          <button class="segmented__option" type="button" aria-pressed="true">Tag</button>
+          <button class="segmented__option" type="button" aria-pressed="false">Woche</button>
+          <button class="segmented__option" type="button" aria-pressed="false">Monat</button>
+        </div>
+      </div></div>
+
+      <h3 class="sg-h3">Chips &amp; Themen</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas sg-canvas--stack">
+        <div class="cluster"><span class="chip">OZG</span><span class="chip">Open Data</span><span class="chip">Barrierefreiheit</span></div>
+        <ul class="topics" role="list" style="max-width:40rem">
+          <li><div class="topic"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg>Sicherheit</div></li>
+          <li><div class="topic"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Datenschutz</div></li>
+          <li><div class="topic"><svg class="icon" aria-hidden="true"><use href="#i-accessibility"/></svg>Barrierefreiheit</div></li>
+        </ul>
+      </div></div>
+
+      <h3 class="sg-h3">Kachel</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas sg-canvas--plain">
+        <article class="tile surface-accent" style="min-height:24rem">
+          <p class="eyebrow">Unser CMS</p>
+          <h3 class="tile__title t-title-1">IES / InfoSite&nbsp;6</h3>
+          <p class="tile__text">Das von Sitepark in Java entwickelte Headless-CMS ist ein solides Werkzeug mit geringem Wartungsaufwand.</p>
+          <div class="tile__footer">
+            <a class="link-chevron link-chevron--external tile__link" href="https://docs.sitepark.com">
+              <span class="link-chevron__label">Tutorials</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+            </a>
+          </div>
+          <span class="tile__mark" aria-hidden="true">6</span>
+        </article>
+      </div></div>
+
+      <div class="sg-grid sg-grid--2">
+        <div>
+          <h3 class="sg-h3">Personenkarte</h3>
+          <div class="sg-example"><div class="sg-example__preview sg-canvas sg-canvas--plain" style="max-width:20rem">
+            <article class="person">
+              <div class="person__media"><img src="assets/img/team/patrick.jpg" width="800" height="533" alt="Porträt von Patrick Jankowski" loading="lazy"></div>
+              <h3 class="person__name">Patrick Jankowski</h3>
+              <p class="person__role">InfoSite · seit 2008</p>
+              <p class="person__text">Fachinformatiker und seit 2008 bei Sitepark. Kennt InfoSite in- und auswendig.</p>
+            </article>
+          </div></div>
+        </div>
+        <div>
+          <h3 class="sg-h3">Partnerkarte</h3>
+          <div class="sg-example"><div class="sg-example__preview sg-canvas" style="max-width:26rem">
+            <article class="partner">
+              <div class="partner__logo"><img src="assets/img/partner/kdvz.png" width="275" height="275" alt="" loading="lazy"></div>
+              <h3 class="partner__name"><a class="partner__link" href="https://kdvz.nrw/">kdvz</a><svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></h3>
+              <p class="partner__text">IT-Dienstleister für öffentliche Verwaltungen in NRW.</p>
+            </article>
+          </div></div>
+        </div>
+      </div>
+
+      <h3 class="sg-h3">Kennzahl</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas surface-inverse sg-canvas--center">
+        <ul class="stats" role="list" style="grid-template-columns:repeat(2,minmax(0,14rem))">
+          <li class="stat">
+            <div class="stat__ring">
+              <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring__track" cx="60" cy="60" r="52"/><circle class="ring__fill" cx="60" cy="60" r="52" pathLength="100"/></svg>
+              <svg class="stat__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#f-network"/></svg>
+            </div>
+            <p class="stat__value"><span class="visually-hidden">25 Tsd.</span><span aria-hidden="true"><span class="stat__number" data-count-to="25" style="--digits:2">25</span> Tsd.</span></p>
+            <p class="stat__label">Commits pro Jahr</p>
+          </li>
+          <li class="stat">
+            <div class="stat__ring">
+              <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring__track" cx="60" cy="60" r="52"/><circle class="ring__fill" cx="60" cy="60" r="52" pathLength="100"/></svg>
+              <svg class="stat__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="#f-pencil"/></svg>
+            </div>
+            <p class="stat__value"><span class="visually-hidden">7 Tsd.</span><span aria-hidden="true"><span class="stat__number" data-count-to="7" style="--digits:1">7</span> Tsd.</span></p>
+            <p class="stat__label">Redakteur:innen arbeiten mit InfoSite</p>
+          </li>
+        </ul>
+      </div></div>
+
+      <h3 class="sg-h3">Glaskarte</h3>
+      <div class="sg-example"><div class="sg-example__preview sg-canvas sg-canvas--plain">
+        <div class="feature" style="min-height:26rem">
+          <div class="feature__media"><img src="assets/img/beratung-1280.jpg" width="1280" height="853" alt="" loading="lazy"></div>
+          <div class="feature__card glass">
+            <h2 class="t-title-2 rule">Beratung und Konzeption</h2>
+            <p class="feature__text">Wir unterstützen Sie bei der Beantwortung dieser Fragestellungen.</p>
+            <div class="feature__actions">
+              <a class="button" href="tel:+49-251-4826550"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Anrufen</a>
+            </div>
+          </div>
+        </div>
+      </div></div>
+
+      <div class="sg-grid sg-grid--2">
+        <div>
+          <h3 class="sg-h3">Icon-Buttons</h3>
+          <div class="sg-example"><div class="sg-example__preview sg-canvas">
+            <ul class="share" role="list">
+              <li><a class="icon-button" href="#komponenten" aria-label="Auf Facebook teilen"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-facebook"/></svg></a></li>
+              <li><a class="icon-button" href="#komponenten" aria-label="Per E-Mail empfehlen"><svg class="icon" aria-hidden="true"><use href="#i-envelope"/></svg></a></li>
+              <li><button class="icon-button" type="button" aria-label="Link kopieren"><svg class="icon" aria-hidden="true"><use href="#i-link"/></svg></button></li>
+            </ul>
+          </div></div>
+        </div>
+        <div>
+          <h3 class="sg-h3">Toast</h3>
+          <div class="sg-example" data-no-code><div class="sg-example__preview sg-canvas">
+            <button class="button button--secondary" type="button" data-demo-toast>Toast zeigen</button>
+            <span class="t-footnote t-secondary">Status-Rückmeldung mit <code class="sg-token">role="status"</code></span>
+          </div></div>
+        </div>
+      </div>
+
+      <h3 class="sg-h3">Navigation</h3>
+      <p class="sg-desc">Glas-Leiste (56 px) mit Logo, vier Ankern und Kontakt-Button. Der aktive Abschnitt wird durch einen gleitenden Indikator (Snappy-Feder) markiert. Unter 1069 px öffnet ein Zwei-Linien-Schalter ein Vollbild-Menü; der Rest der Seite wird dabei <code class="sg-token">inert</code>, <kbd>Esc</kbd> schließt und gibt den Fokus zurück.</p>
+      <div class="sg-canvas sg-canvas--plain"><a class="link-chevron" href="index.html"><span class="link-chevron__label">Navigation auf der Website ansehen</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></div>
+    </section>
+
+    <!-- ============================================================ Barrierefreiheit -->
+    <section class="sg-section" id="barrierefreiheit">
+      <div class="sg-section__header">
+        <p class="eyebrow">10</p>
+        <h2 class="t-title-1">Barrierefreiheit</h2>
+        <p class="t-lead">Für einen Anbieter kommunaler Portale ist Barrierefreiheit Kernkompetenz – der eigene Auftritt geht mit gutem Beispiel voran.</p>
+      </div>
+      <div class="sg-grid sg-grid--wide">
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Kontraste geprüft</h3><p>Alle drei Textstufen ≥ 4,5 : 1 (axe-geprüft). Gelb nur als Fläche, Akzent-Text in #8A6300.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Sichtbarer Fokus</h3><p>2-px-Fokusring mit 3 px Abstand, passend zur Fläche (Tinte oder Gelb).</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Touch-Ziele 44 pt</h3><p>Nach HIG – auch kleine Buttons erweitern ihre Trefferfläche.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Bewegung reduzieren</h3><p>Alle Animationen, Federn und Zähler respektieren die Systemeinstellung.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Dark Mode &amp; Kontrast</h3><p>Folgt dem System; <code class="sg-token">prefers-contrast: more</code> verstärkt Linien und Sekundärtexte.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Struktur &amp; Landmarken</h3><p>Skip-Link, header/main/footer, Überschriften-Hierarchie, beschriftete Navigationen.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Menü-Fokusführung</h3><p>Hintergrund wird inert, Esc schließt, Fokus kehrt zum Schalter zurück.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Ohne JavaScript nutzbar</h3><p>Inhalte, Zahlen und E-Mail-Adresse (per CSS) bleiben sichtbar.</p></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ Umsetzung -->
+    <section class="sg-section" id="umsetzung">
+      <div class="sg-section__header">
+        <p class="eyebrow">11</p>
+        <h2 class="t-title-1">Umsetzung</h2>
+        <p class="t-lead">Statisches HTML, CSS und JavaScript ohne Framework. Gemeinsame Bausteine (Navigation, Footer, Icons) werden mit einem kleinen Build-Skript ohne Abhängigkeiten zusammengesetzt.</p>
+      </div>
+
+      <h3 class="sg-h3">Dateien</h3>
+      <div class="sg-canvas sg-files" style="display:block">
+assets/css/<b>tokens.css</b> <span>— Design Tokens (Primitive, Semantik, Typo, Raster, Motion)</span><br>
+assets/css/<b>base.css</b> <span>— Reset, Typografie, Layout, Flächen, Reveal</span><br>
+assets/css/<b>components.css</b> <span>— alle Komponenten</span><br>
+assets/css/<b>styleguide.css</b> <span>— nur diese Dokumentation</span><br>
+assets/js/<b>main.js</b> <span>— Navigation, Scroll-Spy, Reveal, Ringe, Teilen, E-Mail-Schutz</span><br>
+assets/js/<b>styleguide.js</b> <span>— Live-Tokens, Kurven, Code-Beispiele</span><br>
+src/pages/<b>*.html</b> <span>— Seitenquellen mit Front-Matter</span><br>
+src/partials/<b>*.html</b> <span>— head, nav, footer, sprite</span><br>
+tools/<b>build.py</b> <span>— setzt Seiten zusammen → index.html, datenschutz.html, styleguide.html</span><br>
+design-system/<b>tokens.json</b> <span>— Tokens im DTCG-Format für Figma &amp; Co.</span>
+      </div>
+
+      <h3 class="sg-h3">Arbeitsweise</h3>
+      <pre class="sg-code"><button class="sg-copy" type="button">Kopieren</button><code><span class="tk-com"># Seiten neu bauen (nach Änderungen in src/)</span>
+python3 tools/build.py
+
+<span class="tk-com"># Tokens für Design-Tools exportieren</span>
+python3 tools/export-tokens.py
+
+<span class="tk-com"># Lokale Vorschau</span>
+python3 -m http.server 8765</code></pre>
+
+      <h3 class="sg-h3">Regeln für neue Komponenten</h3>
+      <div class="sg-grid sg-grid--wide">
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Nur Semantik-Tokens</h3><p>Keine Hex-Werte und keine <code class="sg-token">--sp-*</code>-Primitive in Komponenten.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Abstände aus dem Raster</h3><p>Ausschließlich <code class="sg-token">--space-*</code> und die fluiden Layout-Tokens.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Bewegung über Tokens</h3><p>Federn und Dauern nur über <code class="sg-token">--spring-*</code> / <code class="sg-token">--duration-*</code> – dann greift „Bewegung reduzieren“ automatisch.</p></div>
+        <div class="sg-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><h3>Progressive Enhancement</h3><p>Moderne Features (<code class="sg-token">corner-shape</code>, scrollgetriebene Animationen) immer mit Rückfall.</p></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast>
+  <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+  <span data-toast-text></span>
+</div>
+
+<script src="assets/js/styleguide.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+/* ==========================================================================
+   Sitepark Design System 2.0 — Basis
+   Reset · Typografie · Layout · Flächen · Bewegung
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Reset
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Sprungmarken: Abschnitte beginnen exakt unter der Navigation */
+  scroll-padding-top: var(--nav-height);
+  hanging-punctuation: first last;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-body);
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-text);
+  background: var(--color-bg);
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd, ul, ol { margin: 0; }
+ul[role="list"], ol[role="list"] { list-style: none; padding: 0; }
+img, svg, video, picture { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, select, textarea { font: inherit; color: inherit; letter-spacing: inherit; }
+button { cursor: pointer; }
+a { color: inherit; text-decoration-thickness: from-font; text-underline-offset: .18em; }
+address { font-style: normal; }
+abbr[title] { text-decoration: none; }
+[hidden] { display: none !important; }
+
+::selection { background: var(--color-selection-bg); color: var(--color-selection-text); }
+
+/* --------------------------------------------------------------------------
+   Fokus — sichtbar, aber nur bei Tastatur (HIG: klarer Fokuszustand)
+   -------------------------------------------------------------------------- */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Typografie
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-weight: var(--weight-bold);
+  text-wrap: balance;
+  hyphens: manual;
+}
+p, li, dd { text-wrap: pretty; hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 10 4 4; }
+strong, b { font-weight: var(--weight-semibold); }
+
+.t-display-xl { font-size: var(--text-display-xl); line-height: var(--leading-display-xl); letter-spacing: var(--tracking-display-xl); font-weight: var(--weight-bold); }
+.t-display    { font-size: var(--text-display);    line-height: var(--leading-display);    letter-spacing: var(--tracking-display);    font-weight: var(--weight-bold); }
+.t-title-1    { font-size: var(--text-title-1);    line-height: var(--leading-title-1);    letter-spacing: var(--tracking-title-1);    font-weight: var(--weight-bold); }
+.t-statement  { font-size: var(--text-statement);  line-height: var(--leading-statement);  letter-spacing: var(--tracking-statement);  font-weight: var(--weight-semibold); }
+.t-title-2    { font-size: var(--text-title-2);    line-height: var(--leading-title-2);    letter-spacing: var(--tracking-title-2);    font-weight: var(--weight-semibold); }
+.t-title-3    { font-size: var(--text-title-3);    line-height: var(--leading-title-3);    letter-spacing: var(--tracking-title-3);    font-weight: var(--weight-semibold); }
+.t-lead       { font-size: var(--text-lead);       line-height: var(--leading-lead);       letter-spacing: var(--tracking-lead);       font-weight: var(--weight-regular); }
+.t-headline   { font-size: var(--text-headline);   line-height: var(--leading-headline);   letter-spacing: var(--tracking-headline);   font-weight: var(--weight-semibold); }
+.t-body       { font-size: var(--text-body);       line-height: var(--leading-body); }
+.t-callout    { font-size: var(--text-callout);    line-height: var(--leading-callout); }
+.t-footnote   { font-size: var(--text-footnote);   line-height: var(--leading-footnote); }
+.t-caption    { font-size: var(--text-caption);    line-height: var(--leading-caption);    letter-spacing: var(--tracking-caption); }
+
+.t-secondary { color: var(--color-text-secondary); }
+.t-tertiary  { color: var(--color-text-tertiary); }
+.t-accent    { color: var(--color-accent-text); }
+.t-center    { text-align: center; }
+.t-nums      { font-variant-numeric: tabular-nums; }
+
+/* Eyebrow / Kicker — kurze Kategorie über einer Überschrift */
+.eyebrow {
+  display: block;
+  font-size: var(--text-eyebrow);
+  line-height: 1.3;
+  letter-spacing: var(--tracking-eyebrow);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent-text);
+  margin-block-end: var(--space-3);
+}
+
+/* Markenelement: gelber Akzentbalken unter Überschriften (aus dem
+   bisherigen Design übernommen, verfeinert: abgerundet, animiert) */
+.rule::after {
+  content: "";
+  display: block;
+  width: clamp(2.5rem, 1.15em, 4.5rem);
+  height: clamp(3px, 0.085em, 5px);
+  margin-block-start: 0.38em;
+  border-radius: var(--radius-xs);
+  background: var(--color-rule, var(--color-accent));
+  transform-origin: 0 50%;
+}
+.rule--center::after { margin-inline: auto; transform-origin: 50% 50%; }
+
+/* Lesetext-Fluss */
+.prose > * + * { margin-block-start: 1em; }
+.prose a { color: var(--color-text); text-decoration-color: var(--color-accent); text-decoration-thickness: 2px; }
+.prose a:hover { text-decoration-color: currentColor; }
+
+/* --------------------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------------------- */
+.container,
+.container-wide,
+.container-text {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+}
+.container-wide { width: min(100% - 2 * var(--gutter), var(--container-wide)); }
+.container-text { width: min(100% - 2 * var(--gutter), var(--container-text)); }
+
+.section { padding-block: var(--section-pad); position: relative; }
+.section--tight { padding-block: calc(var(--section-pad) * .66); }
+
+.section-header { margin-block-end: var(--stack-lg); max-width: 48rem; }
+.section-header--center { margin-inline: auto; text-align: center; }
+.section-header .t-lead { margin-block-start: var(--space-6); color: var(--color-text-secondary); }
+
+.split-header {
+  display: grid;
+  gap: var(--space-6) var(--grid-gap);
+  margin-block-end: var(--stack-lg);
+  align-items: end;
+}
+@media (min-width: 1069px) {
+  .split-header { grid-template-columns: 5fr 6fr; align-items: start; }
+  .split-header > p { padding-block-start: 0.6em; }
+}
+
+.stack > * + * { margin-block-start: var(--stack-space, var(--space-6)); }
+.cluster { display: flex; flex-wrap: wrap; gap: var(--cluster-gap, var(--space-3)); align-items: center; }
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap; border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Flächen — jede Fläche definiert die Semantik-Tokens neu, damit
+   Komponenten darin automatisch korrekt aussehen.
+   -------------------------------------------------------------------------- */
+.surface {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.surface-secondary {
+  --color-bg: var(--color-bg-secondary);
+  --color-bg-elevated: light-dark(var(--sp-gray-0), #232322);
+}
+
+/* Markengelb */
+.surface-accent {
+  --color-bg: var(--sp-yellow-500);
+  --color-bg-elevated: var(--sp-yellow-400);
+  --color-text: var(--sp-gray-950);
+  --color-text-secondary: var(--sp-gray-800);
+  --color-text-tertiary: var(--sp-gray-800);
+  --color-separator: rgb(0 0 0 / .14);
+  --color-fill: rgb(0 0 0 / .07);
+  --color-fill-strong: rgb(0 0 0 / .12);
+  --color-accent-text: var(--sp-gray-950);
+  --color-rule: var(--sp-gray-950);
+  --color-focus: var(--sp-gray-950);
+  --color-logo-ink: var(--sp-ink);
+  --color-selection-bg: var(--sp-gray-800);
+  --color-selection-text: #fff;
+  --button-bg: var(--sp-gray-950);
+  --button-bg-hover: var(--sp-gray-800);
+  --button-text: #fff;
+}
+
+/* Anthrazit */
+.surface-inverse {
+  --color-bg: light-dark(var(--sp-gray-800), #222221);
+  --color-bg-elevated: light-dark(#474746, #2C2C2B);
+  --color-text: #FFFFFF;
+  --color-text-secondary: var(--sp-gray-300);
+  --color-text-tertiary: var(--sp-gray-400);
+  --color-separator: rgb(255 255 255 / .16);
+  --color-separator-strong: rgb(255 255 255 / .26);
+  --color-fill: rgb(255 255 255 / .08);
+  --color-fill-strong: rgb(255 255 255 / .14);
+  --color-accent-text: var(--sp-yellow-500);
+  --color-focus: var(--sp-yellow-500);
+  --color-logo-ink: #FFFFFF;
+  --color-shadow: rgb(0 0 0 / .28);
+  --color-selection-bg: var(--sp-yellow-500);
+  --color-selection-text: var(--sp-gray-950);
+}
+
+/* --------------------------------------------------------------------------
+   Bewegung: Einblenden beim Scrollen (Apple: ruhig, weich, gestaffelt)
+   Gesteuert über [data-reveal] + JS-Klasse .is-in
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-distance), 0);
+    transition:
+      opacity calc(var(--duration-reveal) * .8) var(--ease-standard),
+      transform var(--duration-reveal) var(--ease-out),
+      filter var(--duration-reveal) var(--ease-out);
+    transition-delay: calc(var(--i, 0) * var(--stagger));
+  }
+  .js [data-reveal="blur"]  { filter: blur(10px); }
+  .js [data-reveal="scale"] { transform: translate3d(0, calc(var(--reveal-distance) * 1.5), 0) scale(.965); }
+  .js [data-reveal="fade"]  { transform: none; }
+  .js [data-reveal].is-in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+
+  /* Akzentbalken zeichnet sich nach der Überschrift */
+  .js .rule[data-reveal]::after {
+    transform: scaleX(0);
+    transition: transform var(--spring-smooth-duration) var(--spring-smooth);
+    transition-delay: calc(var(--i, 0) * var(--stagger) + 250ms);
+  }
+  .js .rule[data-reveal].is-in::after { transform: scaleX(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Bilder: weiches Einblenden nach dem Laden
+   -------------------------------------------------------------------------- */
+.js img[data-fade] { opacity: 0; transition: opacity var(--duration-slow) var(--ease-standard); }
+.js img[data-fade].is-loaded { opacity: 1; }
+
+/* --------------------------------------------------------------------------
+   Seitenwechsel: Cross-Document View Transitions (ersetzt Astro ClientRouter)
+   -------------------------------------------------------------------------- */
+@view-transition { navigation: auto; }
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) { animation: 220ms var(--ease-in) both vt-out; }
+  ::view-transition-new(root) { animation: 420ms var(--ease-out) 80ms both vt-in; }
+}
+@keyframes vt-out { to { opacity: 0; transform: translateY(-8px); } }
+@keyframes vt-in  { from { opacity: 0; transform: translateY(12px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    transition-delay: 0s !important;
+    animation-delay: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Druck
+   -------------------------------------------------------------------------- */
+@media print {
+  .globalnav, .menu, .share, .skip-link, .hero__media { display: none !important; }
+  .surface-accent, .surface-inverse { background: none !important; color: #000 !important; }
+  body { font-size: 11pt; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; }
+}

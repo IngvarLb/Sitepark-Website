@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<meta name="robots" content="{{robots}}">
+<meta name="format-detection" content="telephone=no">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#FFFFFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sitepark GmbH">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://www.sitepark.com/og-image.png">
+<meta property="og:image:width" content="500">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Sitepark Logo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="https://www.sitepark.com/og-image.png">
+<meta name="twitter:image:alt" content="Sitepark Logo">
+
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<script>
+  /* JS-Flag vor dem ersten Paint setzen (Animationen); Rückfall nach 3 s, falls main.js nicht lädt */
+  document.documentElement.classList.add('js');
+  setTimeout(function () { if (!window.__sitepark) document.documentElement.classList.remove('js'); }, 3000);
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","@id":"https://www.sitepark.com/#organization","name":"Sitepark","legalName":"Sitepark GmbH","url":"https://www.sitepark.com/","logo":{"@type":"ImageObject","@id":"https://www.sitepark.com/#logo","url":"https://www.sitepark.com/og-image.png","width":500,"height":500,"caption":"Sitepark Logo"},"image":"https://www.sitepark.com/og-image.png","address":{"@type":"PostalAddress","streetAddress":"Neubrückenstr. 8-11","postalCode":"48143","addressLocality":"Münster","addressCountry":"DE"},"telephone":"+49 251 4826550","faxNumber":"+49 251 48265555","vatID":"DE200998038","identifier":{"@type":"PropertyValue","propertyID":"Handelsregister","value":"Amtsgericht Münster HRB 5017"},"founder":{"@type":"Person","name":"Thorsten Liebold"},"employee":{"@type":"Person","name":"Thorsten Liebold","jobTitle":"Geschäftsführer"},"sameAs":["https://github.com/sitepark","https://de.linkedin.com/company/sitepark-com","https://www.facebook.com/sitepark/"]}
+</script>

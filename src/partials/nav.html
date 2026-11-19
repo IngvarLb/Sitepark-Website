@@ -1,0 +1,40 @@
+<a class="skip-link" href="#main">Inhalt anspringen</a>
+
+<header class="globalnav" data-globalnav>
+  <nav class="globalnav__bar container-wide" aria-label="Hauptnavigation" data-scrollspy>
+    <a class="globalnav__logo" href="{{homeurl}}" aria-label="Sitepark – zur Startseite">
+      <svg viewBox="0 0 123 38.75" aria-hidden="true"><use href="#logo"/></svg>
+    </a>
+    <div class="globalnav__links">
+      <span class="globalnav__indicator" aria-hidden="true"></span>
+      <ul class="globalnav__list" role="list">
+        <li><a class="globalnav__link" href="{{home}}#ansprechpartner">Ansprechpartner</a></li>
+        <li><a class="globalnav__link" href="{{home}}#fakten-und-zahlen">Fakten und Zahlen</a></li>
+        <li><a class="globalnav__link" href="{{home}}#partner">Unsere Partner</a></li>
+        <li><a class="globalnav__link" href="{{home}}#beratung-und-konzeption">Beratung</a></li>
+      </ul>
+    </div>
+    <a class="button button--sm globalnav__cta" href="#kontakt">Kontakt</a>
+    <button class="globalnav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Navigation öffnen" data-menu-toggle>
+      <span class="globalnav__toggle-line"></span>
+      <span class="globalnav__toggle-line"></span>
+    </button>
+  </nav>
+</header>
+
+<div class="menu" id="menu" aria-label="Navigation" role="dialog" aria-modal="true">
+  <div class="menu__inner container-wide">
+    <ul class="menu__list" role="list">
+      <li class="menu__item" style="--i:0"><a class="menu__link" href="{{home}}#ansprechpartner">Ansprechpartner<svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li class="menu__item" style="--i:1"><a class="menu__link" href="{{home}}#fakten-und-zahlen">Fakten und Zahlen<svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li class="menu__item" style="--i:2"><a class="menu__link" href="{{home}}#partner">Unsere Partner<svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li class="menu__item" style="--i:3"><a class="menu__link" href="{{home}}#beratung-und-konzeption">Beratung<svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+      <li class="menu__item" style="--i:4"><a class="menu__link" href="#kontakt">Kontakt<svg class="icon" aria-hidden="true"><use href="#i-chevron-right"/></svg></a></li>
+    </ul>
+    <div class="menu__meta menu__item" style="--i:5">
+      <span class="menu__meta-label">Direkt erreichen</span>
+      <a href="tel:+49-251-4826550">+49 251 482655 0</a>
+      <a class="js-email" href="#kontakt" data-email-user="info" data-email-host="sitepark" data-email-tld="com"></a>
+    </div>
+  </div>
+</div>
